@@ -1,0 +1,20 @@
+# Rally Communication Simulator (ROS 2 Humble)
+
+## Leírás
+Ez a projekt egy rally verseny kommunikációját szimulálja ROS 2 környezetben.
+A rendszer három fő node-ból áll:
+- **RaceControl** – központi irányítás, amely vezérlő üzeneteket és riasztásokat küld.
+- **StageMarshal** – pályabíró, aki figyeli a verseny szakaszt, és eseményeket küld vissza.
+- **CarTelemetry** – autó telemetria adatait (sebesség, fordulatszám, hőmérséklet) publikálja.
+
+A kommunikáció QoS beállításokkal szimulálja a rádiós veszteséget (Best Effort).
+
+---
+
+## Telepítés és build
+
+```bash
+cd ~/ros2_ws
+colcon build --packages-select rally_comm
+. install/setup.bash
+
