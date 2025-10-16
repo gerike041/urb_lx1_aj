@@ -25,8 +25,7 @@ git clone https://github.com/gerike041/urb_lx1_aj
 cd ~/ros2_ws
 ```
 ```r
-colcon build --packages-select rally_comm
-. install/setup.bash
+colcon build --packages-select rally_com --symlink-install
 ```
 
 
