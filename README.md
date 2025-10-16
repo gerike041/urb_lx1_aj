@@ -45,3 +45,25 @@ ros2 run rally_comm stage_marshal
 ```r
 ros2 run rally_comm car_telemetry
 ```
+
+## Kommunikációs diagaramm
+
+        ┌──────────────┐
+        │ RaceControl  │
+        │ (irányítás)  │
+        └──────┬───────┘
+               │
+     vezérlő üzenetek
+               │
+     ┌─────────▼─────────┐
+     │   StageMarshal    │
+     │  (pályabíró)      │
+     └─────────┬─────────┘
+               │
+      esemény visszajelzés
+               │
+        ┌──────▼──────┐
+        │ CarTelemetry│
+        │ (autó adat) │
+        └─────────────┘
+
