@@ -49,22 +49,16 @@ ros2 run rally_comm car_telemetry
 ## Kommunikációs diagaramm
 
 ```mermaid
-        ┌──────────────┐
-        │ RaceControl  │
-        │ (irányítás)  │
-        └──────┬───────┘
-               │
-     vezérlő üzenetek
-               │
-     ┌─────────▼─────────┐
-     │   StageMarshal    │
-     │  (pályabíró)      │
-     └─────────┬─────────┘
-               │
-      esemény visszajelzés
-               │
-        ┌──────▼──────┐
-        │ CarTelemetry│
-        │ (autó adat) │
-        └─────────────┘
+    graph LR;
 
+race([ /RaceControl ]):::red --> control_msg[ /control<br/>std_msgs/String]:::light
+control_msg --> marshal([ /StageMarshal ]):::red
+marshal --> event_msg[ /event<br/>std_msgs/String]:::light
+event_msg --> car([ /CarTelemetry ]):::red
+
+classDef light fill:#34aec5,stroke:#152742,stroke-width:2px,color:#152742  
+classDef dark fill:#152742,stroke:#34aec5,stroke-width:2px,color:#34aec5
+classDef white fill:#ffffff,stroke:#152742,stroke-width:2px,color:#152742
+classDef red fill:#ef4638,stroke:#152742,stroke-width:2px,color:#fff
+
+```
