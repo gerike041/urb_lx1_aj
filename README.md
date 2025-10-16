@@ -10,6 +10,15 @@ A rendszer három fő node-ból áll:
 A kommunikáció QoS beállításokkal szimulálja a rádiós veszteséget (Best Effort).
 
 ---
+## Clone pacages
+
+``` r
+cd ~/ros2_ws/src
+```
+``` r
+git clone https://github.com/gerike041/urb_lx1_aj
+```
+
 
 ## Telepítés és build
 
@@ -17,4 +26,6 @@ A kommunikáció QoS beállításokkal szimulálja a rádiós veszteséget (Best
 cd ~/ros2_ws
 colcon build --packages-select rally_comm
 . install/setup.bash
+```
+
 
