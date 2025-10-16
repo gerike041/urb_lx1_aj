@@ -26,6 +26,7 @@ cd ~/ros2_ws
 ```
 ```r
 colcon build --packages-select rally_com --symlink-install
+source install/setup.bash
 ```
 ## Nefelejetsd el sorcoli a ros2 parancsok elött
 ```r
