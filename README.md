@@ -15,15 +15,16 @@ A kommunikáció QoS beállításokkal szimulálja a rádiós veszteséget (Best
 ``` r
 cd ~/ros2_ws/src
 ```
-``` r
+```  r
 git clone https://github.com/gerike041/urb_lx1_aj
 ```
 
-
 ## Telepítés és build
 
-```bash
+```r
 cd ~/ros2_ws
+```
+```r
 colcon build --packages-select rally_comm
 . install/setup.bash
 ```
