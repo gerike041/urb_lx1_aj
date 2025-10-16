@@ -27,5 +27,12 @@ cd ~/ros2_ws
 ```r
 colcon build --packages-select rally_com --symlink-install
 ```
-
+## Nefelejetsd el sorcoli a ros2 parancsok elött
+```r
+ros2 launch rally_comm rally_launch.launch.py
+```
+### Terminal 1
+```r
+ros2 run rally_comm race_control
+```
 
