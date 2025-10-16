@@ -36,3 +36,12 @@ ros2 launch rally_comm rally_launch.launch.py
 ros2 run rally_comm race_control
 ```
 
+### Terminal 2 - Stage marshal
+```r
+ros2 run rally_comm stage_marshal
+```
+
+### Terminal 2 - Car telemetry
+```r
+ros2 run rally_comm car_telemetry
+```
