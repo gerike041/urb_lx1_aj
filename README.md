@@ -48,6 +48,7 @@ ros2 run rally_comm car_telemetry
 
 ## Kommunikációs diagaramm
 
+```mermaid
         ┌──────────────┐
         │ RaceControl  │
         │ (irányítás)  │
