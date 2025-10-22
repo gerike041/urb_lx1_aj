@@ -10,7 +10,7 @@ A rendszer három fő node-ból áll:
 A kommunikáció QoS beállításokkal szimulálja a rádiós veszteséget (Best Effort).
 
 ---
-## Clone pacages
+## Clone packages
 
 ``` r
 cd ~/ros2_ws/src
@@ -34,34 +34,40 @@ source install/setup.bash
 ```r
 ros2 launch rally_comm rally_demo.launch.py
 ```
-### Terminal 1
+#### Ezzel elindul minden
+
+
+## Tesztelés
+### Aktív topicok listázása
+
 ```r
-ros2 run rally_comm race_control
+ros2 topic list
+```
+### Belehallgatás egy topicba
+```r
+ros2 topic echo /race/control
 ```
 
-### Terminal 2 - Stage marshal
 ```r
-ros2 run rally_comm stage_marshal
+ros2 topic echo /car/car_11/telemetry
+```
+```r
+ros2 topic echo /marshal/ss1/events
 ```
 
-### Terminal 2 - Car telemetry
-```r
-ros2 run rally_comm car_telemetry
-```
 
-## Kommunikációs diagaramm
+## Kommunikációs diagram
 
 ```mermaid
-    graph LR;
+    graph LR
+    RC[RaceControl] -- /race/control --> M[StageMarshal]
+    M -- /marshal/ss1/events --> RC
+    C11[CarTelemetry car_11] --> T11[/car/car_11/telemetry/]
+    C21[CarTelemetry car_21] --> T21[/car/car_21/telemetry/]
+    C46[CarTelemetry car_46] --> T46[/car/car_46/telemetry/]
 
-race([ /RaceControl ]):::red --> control_msg[ /control<br/>std_msgs/String]:::light
-control_msg --> marshal([ /StageMarshal ]):::red
-marshal --> event_msg[ /event<br/>std_msgs/String]:::light
-event_msg --> car([ /CarTelemetry ]):::red
-
-classDef light fill:#34aec5,stroke:#152742,stroke-width:2px,color:#152742  
-classDef dark fill:#152742,stroke:#34aec5,stroke-width:2px,color:#34aec5
-classDef white fill:#ffffff,stroke:#152742,stroke-width:2px,color:#152742
+classDef light fill:#34aec5,stroke:#152742,stroke-width:2px,color:#152742
 classDef red fill:#ef4638,stroke:#152742,stroke-width:2px,color:#fff
+
 
 ```
