@@ -32,7 +32,7 @@ colcon build --packages-select rally_comm --symlink-install
 source install/setup.bash
 ```
 ```r
-ros2 launch rally_comm rally_launch.launch.py
+ros2 launch rally_comm rally_demo.launch.py
 ```
 ### Terminal 1
 ```r
