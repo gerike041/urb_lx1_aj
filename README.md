@@ -26,6 +26,9 @@ cd ~/ros2_ws
 ```
 ```r
 colcon build --packages-select rally_com --symlink-install
+
+```
+```r
 source install/setup.bash
 ```
 ```r
